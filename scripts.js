@@ -23,5 +23,9 @@ document.getElementById('upload-form').addEventListener('submit', function(event
 
 function displayResult(data) {
     const resultDiv = document.getElementById('result-display');
+    if (data.result === undefined) {
+        resultDiv.innerHTML = 'Error: Rate limit reached. Please try again later.';
+        return;
+    }
     resultDiv.innerHTML = 'Result: ' + data.result;
 }
